@@ -12,12 +12,15 @@ extension ImageExtension on String {
   String get json => '$baseJsonPath$this.json';
 }
 
-//* --------------------- svgs -------------------------
 final String splashIcon = 'splash-icon'.svg;
 //? Onboarding
 final String appIcon = 'app-icon'.svg;
 final String onboarding1 = 'onboarding1'.svg;
 final String onboarding2 = 'onboarding2'.svg;
+
+//? Auth
+final String buyer = 'buyer'.png;
+final String seller = 'seller'.png;
 
 //? Bottom Navigation Icons
 final String homeOutlined = 'home-outlined'.svg;
@@ -34,11 +37,3 @@ final String listFilled = 'list-filled'.svg;
 final String savedFilled = 'saved-filled'.svg;
 final String profileFilled = 'profile-filled'.svg;
 //? 
-
-//* --------------------- pngs -------------------------
-// final String appIcon = 'onboarding-app-icon'.png;
-
-
-//* --------------------- json -------------------------
-// final String verificationSuccessful = 'successful'.json;
-

@@ -50,7 +50,7 @@ class AppSnackBar {
     Get.snackbar(
       "Tips",
       message,
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 4),
       dismissDirection: DismissDirection.horizontal,
     );
   }

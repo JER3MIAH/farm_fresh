@@ -50,7 +50,7 @@ final ThemeData appTheme = baseTheme.copyWith(
       .copyWith(
         onPrimary: appColors.green.withOpacity(0.6),
         primary: appColors.green,
-        secondary: appColors.orange,
+        secondary: appColors.grey,
         error: appColors.error,
         onError: appColors.error.withOpacity(0.42),
         background: appColors.white,

@@ -1,3 +1,5 @@
+import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
+import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/features/onboarding/screen/widgets/app_icon_and_text.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +60,9 @@ class OnboardingScreen extends HookWidget {
         children: [
           AppButton(
             title: 'Get started',
-            onTap: () {},
+            onTap: () {
+              AppNavigator.pushNamed(AuthRoutes.register);
+            },
           ),
         ],
       ),
