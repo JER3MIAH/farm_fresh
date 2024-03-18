@@ -13,6 +13,12 @@ extension ImageExtension on String {
 }
 
 //* --------------------- svgs -------------------------
+final String splashIcon = 'splash-icon'.svg;
+//? Onboarding
+final String appIcon = 'app-icon'.svg;
+final String onboarding1 = 'onboarding1'.svg;
+final String onboarding2 = 'onboarding2'.svg;
+
 //? Bottom Navigation Icons
 final String homeOutlined = 'home-outlined'.svg;
 final String homeGrey = 'home-grey'.svg;

@@ -1,3 +1,7 @@
+class SplashRoute {
+  static const splash = '/splashScreen';
+}
+
 class AuthRoutes {
   static const onboarding = '/onboardingView';
   static const register = '/registerView';

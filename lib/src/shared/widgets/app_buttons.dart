@@ -29,7 +29,7 @@ class AppButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 10.dy),
           minimumSize: buttonSize ?? const Size(double.infinity, 60),
           shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(20),
+            borderRadius: borderRadius ?? BorderRadius.circular(10),
           ),
           backgroundColor: buttonColor ?? appColors.green,
         ),
@@ -84,7 +84,7 @@ class AppOutlinedButton extends StatelessWidget {
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: borderRadius ??
-                    BorderRadius.circular(20), // Adjust the radius as needed
+                    BorderRadius.circular(10), // Adjust the radius as needed
               ),
             ),
             side: MaterialStatePropertyAll(
