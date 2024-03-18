@@ -4,7 +4,7 @@ const kDefaultError = 'Oops something went wrong!';
 
 
 // font families
-const String kTwCenMTStd = 'Tw Cen MT Std';
+const String kNunito = 'Nunito';
 
 //google maps
 const String kGoogleApiKey = "AIzaSyDDKzBMT4gcP0zjBDQib2MeaVWLllWzxoQ";

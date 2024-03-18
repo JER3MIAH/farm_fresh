@@ -34,7 +34,7 @@ class AppText extends StatelessWidget {
                 color: color,
                 overflow: TextOverflow.ellipsis,
                 decoration: isDecorated ? TextDecoration.underline : null,
-                decorationColor: isDecorated ? appColors.blue : null,
+                decorationColor: isDecorated ? appColors.green : null,
               ),
         ),
       ],

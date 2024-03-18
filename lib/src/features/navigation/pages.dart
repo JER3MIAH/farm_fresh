@@ -9,11 +9,25 @@ class AppPages {
   static List<String> history = [];
 
   static final List<GetPage> routes = [
-    // GetPage(
-    //   name: AuthRoutes.onboarding,
-    //   page: () => const OnboardingView(),
-    //   transition: Transition.native,
-    //   transitionDuration: const Duration(milliseconds: 700),
-    // ),
+    ...authPages,
+    ...homePages,
+    ...orderPages,
+    ...listPages,
+    ...savedPages,
   ];
 }
+
+//*-------------------------------Auth Routes---------------------------------------------
+List<GetPage> authPages = [];
+
+//*-------------------------------Home Routes---------------------------------------------
+List<GetPage> homePages = [];
+
+//*-------------------------------Order Routes--------------------------------------------
+List<GetPage> orderPages = [];
+
+//*-------------------------------List Routes---------------------------------------------
+List<GetPage> listPages = [];
+
+//*-------------------------------Saved Routes--------------------------------------------
+List<GetPage> savedPages = [];

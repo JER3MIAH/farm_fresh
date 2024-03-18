@@ -29,9 +29,9 @@ class AppButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 10.dy),
           minimumSize: buttonSize ?? const Size(double.infinity, 60),
           shape: RoundedRectangleBorder(
-            borderRadius:borderRadius ??  BorderRadius.circular(20),
+            borderRadius: borderRadius ?? BorderRadius.circular(20),
           ),
-          backgroundColor: buttonColor ?? appColors.blue,
+          backgroundColor: buttonColor ?? appColors.green,
         ),
         child: isLoading
             ? CircularProgressIndicator.adaptive(
@@ -39,10 +39,11 @@ class AppButton extends StatelessWidget {
               )
             : Text(
                 title,
-                style: textStyle ?? Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(color: appColors.white),
+                style: textStyle ??
+                    Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(color: appColors.white),
               ),
       ),
     );
