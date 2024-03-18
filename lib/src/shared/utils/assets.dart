@@ -12,13 +12,27 @@ extension ImageExtension on String {
   String get json => '$baseJsonPath$this.json';
 }
 
+//* --------------------- svgs -------------------------
+//? Bottom Navigation Icons
+final String homeOutlined = 'home-outlined'.svg;
+final String homeGrey = 'home-grey'.svg;
+final String ordersOutlined = 'orders-outlined'.svg;
+final String listOutlined = 'list-outlined'.svg;
+final String savedOutlined = 'saved-outlined'.svg;
+final String profileOutlined = 'profile-outlined'.svg;
+final String statisticsOutlined = 'statistics-outlined'.svg;
+final String communityOutlined = 'community-outlined'.svg;
+final String homeFilled = 'home-filled'.svg;
+final String ordersFilled = 'orders-filled'.svg;
+final String listFilled = 'list-filled'.svg;
+final String savedFilled = 'saved-filled'.svg;
+final String profileFilled = 'profile-filled'.svg;
+//? 
 
-//* pngs
+//* --------------------- pngs -------------------------
 // final String appIcon = 'onboarding-app-icon'.png;
 
-//* svgs
-// final String homeOutlined = 'home-outlined'.svg;
 
-//* json
+//* --------------------- json -------------------------
 // final String verificationSuccessful = 'successful'.json;
 
