@@ -9,7 +9,7 @@ class AuthRoutes {
   static const signUp = '/signUpView';
   static const address = '/addressView';
   static const forgotPassword = '/forgotPasswordView';
-  static const emailVerification = '/emailVerificationView';
+  static const otpVerification = '/otpVerificationView';
 }
 
 class HomeRoutes {

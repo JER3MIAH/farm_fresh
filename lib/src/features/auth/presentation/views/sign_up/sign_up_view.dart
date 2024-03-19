@@ -112,9 +112,9 @@ class SignUpView extends HookConsumerWidget {
               title: 'Next',
               isLoading: signupViewmodel.isLoading,
               onTap: () async {
-                if (formKey.currentState!.validate()) {
-                  
-                }
+                // if (formKey.currentState!.validate()) {
+                AppNavigator.pushNamed(AuthRoutes.otpVerification);
+                // }
               },
               buttonColor: signupViewmodel.buttonEnabled
                   ? theme.primary
@@ -125,6 +125,7 @@ class SignUpView extends HookConsumerWidget {
             LinedUpText(
               leadingText: 'Already have an account? ',
               trailingText: 'Log in',
+              isUndelined: true,
               onTapTrailing: () {
                 signupViewmodel.disposeValues();
                 AppNavigator.replaceNamed(AuthRoutes.login);

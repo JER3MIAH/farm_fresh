@@ -1,5 +1,6 @@
 import 'package:farm_fresh/src/features/auth/presentation/views/login/login_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/forgot_password/forgot_password_view.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/otp_verification/otp_verification_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/register/register_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/sign_up_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/home_view.dart';
@@ -53,6 +54,12 @@ List<GetPage> authPages = [
   GetPage(
     name: AuthRoutes.signUp,
     page: () => const SignUpView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
+   GetPage(
+    name: AuthRoutes.otpVerification,
+    page: () => const OtpVerificationView(),
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),
