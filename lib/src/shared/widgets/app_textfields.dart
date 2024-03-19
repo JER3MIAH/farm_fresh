@@ -88,7 +88,10 @@ class AppTextField extends HookWidget {
             children: [
               TextFormField(
                 focusNode: !isActive ? focusNode : null,
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context)
+                    .textTheme
+                    .displayMedium!
+                    .copyWith(color: appColors.black),
                 onTap: onTap,
                 initialValue: initialText,
                 textAlign: TextAlign.start,

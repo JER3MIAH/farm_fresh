@@ -1,7 +1,6 @@
 import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
-import 'package:farm_fresh/src/shared/widgets/app_inkwell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 

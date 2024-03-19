@@ -1,7 +1,6 @@
 import 'package:farm_fresh/src/features/auth/presentation/view_models/sign_up_viewmodel.dart';
 import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
-import 'package:farm_fresh/src/features/onboarding/screen/widgets/app_icon_and_text.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -114,7 +113,7 @@ class SignUpView extends HookConsumerWidget {
               isLoading: signupViewmodel.isLoading,
               onTap: () async {
                 if (formKey.currentState!.validate()) {
-                  //TODO:
+                  
                 }
               },
               buttonColor: signupViewmodel.buttonEnabled

@@ -47,7 +47,9 @@ class ForgotPasswordView extends HookWidget {
                 : isSecondPage.value
                     ? 'A code has been sent to your email address to\nhelp you gain access back to your account. Enter\nthe code'
                     : 'Enter the email address you signed up with and\nwe will send you a code to help you reset your\npassword',
-            style: textTheme.displaySmall,
+            style: TextStyle(
+              fontSize: 14.sp,
+            ),
           ),
           YBox(15.dy),
           Expanded(
