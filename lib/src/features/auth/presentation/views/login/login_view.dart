@@ -1,9 +1,9 @@
 import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
+import 'package:farm_fresh/src/shared/widgets/app_inkwell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../widgets/widgets.dart';
 
@@ -29,51 +29,67 @@ class LoginView extends HookWidget {
         child: AppColumn(
           margin: EdgeInsets.symmetric(horizontal: 15.dx).copyWith(top: 55.dy),
           children: [
-            SvgPicture.asset(appIcon),
+            const BackAndAppIcon(),
             YBox(15.dy),
             StartAlignedText(
-              text: 'Welcome back',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(height: 2),
+              text: 'Log in',
+              style: TextStyle(
+                height: 2,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             StartAlignedText(
-              text: 'Enter your information below to get into\nthe app',
-              style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                    color: theme.secondary.withOpacity(0.6),
+              text: 'Provide your information below to get started',
+              style: TextStyle(
+                color: theme.secondary.withOpacity(0.6),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 21.dy),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  AppInkWell(
+                    onTap: () {},
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: theme.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
+                ],
+              ),
             ),
-            YBox(15.dy),
             AppTextField(
               controller: emailController,
-              labelText: 'Email address',
-              hintText: 'Enter email address',
+              hintText: 'Email address',
               keyBoardType: TextInputType.emailAddress,
               validator: (value) {
                 return Validator.nonEmptyField(value);
               },
             ),
-            YBox(25.dy),
+            YBox(45.dy),
             AppTextField(
               controller: passwordController,
-              labelText: 'Password',
-              hintText: 'Enter password',
+              hintText: 'Password',
               isPasswordField: true,
               keyBoardType: TextInputType.visiblePassword,
               validator: (value) {
                 return Validator.nonEmptyField(value);
               },
             ),
-            YBox(15.dy),
-            GestureDetector(
-              onTap: () {
-                AppNavigator.pushNamed(AuthRoutes.forgotPassword);
+            YBox(25.dy),
+            LinedUpText(
+              leadingText: 'Are you new here? ',
+              trailingText: 'Register',
+              isUndelined: true,
+              onTapTrailing: () {
+                AppNavigator.replaceNamed(AuthRoutes.register);
               },
-              child: StartAlignedText(
-                text: 'Forgot password?',
-                style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                      color: theme.primary,
-                    ),
-              ),
-            ),
+            )
           ],
         ),
       ),
@@ -94,12 +110,12 @@ class LoginView extends HookWidget {
           ),
           YBox(10.dy),
           LinedUpText(
-            leadingText: 'New to this space? ',
-            trailingText: 'Sign up',
+            leadingText: 'Forgot password? ',
+            trailingText: 'Reset',
             onTapTrailing: () {
               emailController.clear();
               passwordController.clear();
-              AppNavigator.replaceNamed(AuthRoutes.register);
+              AppNavigator.pushNamed(AuthRoutes.forgotPassword);
             },
           ),
         ],

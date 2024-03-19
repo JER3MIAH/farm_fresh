@@ -41,6 +41,9 @@ final ThemeData appTheme = baseTheme.copyWith(
           fontSize: 25.sp,
           fontWeight: FontWeight.w700,
         ),
+        displayMedium: TextStyle(
+          fontSize: 18.sp,
+        ),
       )
       .apply(
         fontFamily: kNunito,
@@ -50,7 +53,7 @@ final ThemeData appTheme = baseTheme.copyWith(
       .copyWith(
         onPrimary: appColors.green.withOpacity(0.6),
         primary: appColors.green,
-        secondary: appColors.grey,
+        secondary: appColors.grey.withOpacity(0.3),
         error: appColors.error,
         onError: appColors.error.withOpacity(0.42),
         background: appColors.white,

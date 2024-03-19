@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppIconAndText extends StatelessWidget {
-  const AppIconAndText({super.key});
+  final double? width;
+  const AppIconAndText({
+    super.key,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
     return AppColumn(
-      width: Dims.deviceSize.width,
+      width: width ?? Dims.deviceSize.width,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SvgPicture.asset(appIcon),

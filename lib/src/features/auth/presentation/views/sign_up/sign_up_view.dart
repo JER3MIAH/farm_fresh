@@ -16,8 +16,8 @@ class SignUpView extends HookConsumerWidget {
     final theme = Theme.of(context).colorScheme;
     final formKey = useMemoized(() => GlobalKey<FormState>());
     final fullNameController = useTextEditingController();
-    final emailController = useTextEditingController();
     final phoneNumberController = useTextEditingController();
+    final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
 
     final signupViewmodel = ref.watch(signUpProvider);
@@ -34,70 +34,83 @@ class SignUpView extends HookConsumerWidget {
           );
         },
         child: AppColumn(
-          margin: EdgeInsets.symmetric(horizontal: 15.dx),
+          margin: EdgeInsets.symmetric(horizontal: 15.dx).copyWith(top: 55.dy),
           shouldScroll: true,
           children: [
-            YBox(55.dy),
-            const AppIconAndText(),
-            YBox(20.dy),
-            StartAlignedText(
-              text: 'Hello there',
-              style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                    fontWeight: FontWeight.w700,
+            const BackAndAppIcon(),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 11.dy),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  AppInkWell(
+                    onTap: () {},
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: theme.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
+                ],
+              ),
             ),
             StartAlignedText(
-              text: 'Enter your information below to get started',
-              style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                    fontSize: 16.sp,
-                    height: 2,
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+              text: 'Sign Up',
+              style: TextStyle(
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            StartAlignedText(
+              text: 'Provide your information below to get started',
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: theme.secondary,
+              ),
             ),
             YBox(20.dy),
             AppTextField(
               controller: fullNameController,
-              labelText: 'First name',
-              hintText: 'Enter your first name',
+              hintText: 'Full name',
               keyBoardType: TextInputType.name,
               validator: (value) {
                 return Validator.nonEmptyField(value);
               },
             ),
-            YBox(25.dy),
-            AppTextField(
-              controller: emailController,
-              labelText: 'Email address',
-              hintText: 'Enter email address',
-              keyBoardType: TextInputType.emailAddress,
-              validator: (value) {
-                return Validator.emailValidator(value);
-              },
-            ),
-            YBox(25.dy),
+            YBox(35.dy),
             AppTextField(
               controller: phoneNumberController,
-              labelText: 'Phone number',
-              hintText: 'Enter your phone number',
+              hintText: 'Phone number',
               keyBoardType: TextInputType.phone,
               validator: (value) {
                 return Validator.nonEmptyField(value);
               },
             ),
-            YBox(25.dy),
+            YBox(35.dy),
+            AppTextField(
+              controller: emailController,
+              hintText: 'Email address',
+              keyBoardType: TextInputType.emailAddress,
+              validator: (value) {
+                return Validator.emailValidator(value);
+              },
+            ),
+            YBox(35.dy),
             AppTextField(
               controller: passwordController,
-              labelText: 'Password',
-              hintText: 'Enter password',
+              hintText: 'Password',
               keyBoardType: TextInputType.visiblePassword,
               isPasswordField: true,
               validator: (value) {
                 return Validator.password(value);
               },
             ),
-            YBox(20.dy),
+            YBox(45.dy),
             AppButton(
-              title: 'Submit',
+              title: 'Next',
               isLoading: signupViewmodel.isLoading,
               onTap: () async {
                 if (formKey.currentState!.validate()) {
@@ -106,10 +119,10 @@ class SignUpView extends HookConsumerWidget {
               },
               buttonColor: signupViewmodel.buttonEnabled
                   ? theme.primary
-                  : theme.secondary.withOpacity(0.1),
-              // : theme.secondary.withOpacity(0.1),
+                  : theme.secondary,
+              // : theme.secondary,
             ),
-            YBox(10.dy),
+            YBox(27.dy),
             LinedUpText(
               leadingText: 'Already have an account? ',
               trailingText: 'Log in',
@@ -118,7 +131,7 @@ class SignUpView extends HookConsumerWidget {
                 AppNavigator.replaceNamed(AuthRoutes.login);
               },
             ),
-            YBox(25.dy),
+            YBox(35.dy),
           ],
         ),
       ),

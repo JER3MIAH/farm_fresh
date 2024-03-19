@@ -39,7 +39,7 @@ class AppTextField extends HookWidget {
     this.prefixWidget,
     this.suffixWidget,
     this.address = '',
-    this.hasTopTitle = true,
+    this.hasTopTitle = false,
     this.contentPadding,
   });
 
@@ -79,10 +79,10 @@ class AppTextField extends HookWidget {
             : const SizedBox.shrink(),
         Container(
           padding: EdgeInsets.symmetric(
-              horizontal: 15, vertical: verticalPadding ?? 10),
+              horizontal: 15, vertical: verticalPadding ?? 7),
           decoration: BoxDecoration(
             border: Border.all(color: currentBorderColor.value, width: 0.7),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Column(
             children: [
