@@ -30,4 +30,14 @@ class SellerProfileSetUpViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  //? select identity verification method
+  int? selectedOption;
+
+  void updateSelectedOption(int value) {
+    selectedOption = value;
+    notifyListeners();
+  }
+
+  
 }

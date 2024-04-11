@@ -101,7 +101,7 @@ List<GetPage> homePages = [
     transitionDuration: const Duration(milliseconds: 500),
   ),
   GetPage(
-    name: HomeRoutes.buyerHome,
+    name: HomeRoutes.sellerHome,
     page: () => const BuyerMainView(),
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),

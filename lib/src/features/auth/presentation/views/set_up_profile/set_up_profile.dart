@@ -1,19 +1,21 @@
-import 'package:farm_fresh/src/features/auth/presentation/view_models/seller_profile_setup.dart';
-import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/widgets/category_container.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/first_view.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/fourth_view.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/third_view.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/second_view.dart';
+import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
+import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class SetUpProfileView extends ConsumerWidget {
+class SetUpProfileView extends HookWidget {
   const SetUpProfileView({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
-    final categories = ref.watch(sellerProfileSetUpProvider).categories;
-    final selectedCategories =
-        ref.watch(sellerProfileSetUpProvider).selectedCategories;
+  Widget build(BuildContext context) {
+    final pageController = usePageController();
+    final isFirst = useState<bool>(false);
+    final isLast = useState<bool>(false);
 
     return Scaffold(
       body: Padding(
@@ -32,7 +34,11 @@ class SetUpProfileView extends ConsumerWidget {
             ),
             YBox(10.dy),
             Text(
-              'Choose the category that best describes your products.',
+              isLast.value
+                  ? 'Add  payment information'
+                  : isFirst.value
+                      ? 'Choose the category that best describes your products.'
+                      : 'Verify your identity',
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
@@ -40,25 +46,20 @@ class SetUpProfileView extends ConsumerWidget {
               ),
             ),
             YBox(40.dy),
-            Table(
-              defaultColumnWidth: const IntrinsicColumnWidth(),
-              children: List.generate(4, (rowIndex) {
-                return TableRow(
-                  children: List.generate(3, (colIndex) {
-                    final index = rowIndex * 3 + colIndex;
-                    return CategoryContainer(
-                      text: categories[index],
-                      isSelected:
-                          selectedCategories.contains(categories[index]),
-                      onTap: () {
-                        ref
-                            .read(sellerProfileSetUpProvider.notifier)
-                            .addOrRemoveCategory(categories[index]);
-                      },
-                    );
-                  }),
-                );
-              }),
+            Expanded(
+              child: PageView(
+                controller: pageController,
+                onPageChanged: (value) {
+                  isFirst.value = (value == 0);
+                  isLast.value = (value == 3);
+                },
+                children: const [
+                  CategoryView(),
+                  PickVerifView(),
+                  ThirdView(),
+                  FourthView(),
+                ],
+              ),
             ),
           ],
         ),
@@ -67,7 +68,16 @@ class SetUpProfileView extends ConsumerWidget {
         padding: EdgeInsets.symmetric(horizontal: 15.dy, vertical: 30.dy),
         child: AppButton(
           title: 'Next',
-          onTap: () {},
+          onTap: () {
+            if (isLast.value) {
+              AppNavigator.pushNamed(HomeRoutes.sellerHome);
+            } else {
+              pageController.nextPage(
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.linear,
+              );
+            }
+          },
         ),
       ),
     );
