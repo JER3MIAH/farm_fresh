@@ -7,6 +7,7 @@ import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/confirm_
 import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/set_up_profile.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/sign_up_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/buyer_home_view.dart';
+import 'package:farm_fresh/src/features/home/presentation/views/seller_home_view.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/features/onboarding/screen/onboarding_screen.dart';
 import 'package:farm_fresh/src/features/splash/splash_screen.dart';
@@ -102,7 +103,7 @@ List<GetPage> homePages = [
   ),
   GetPage(
     name: HomeRoutes.sellerHome,
-    page: () => const BuyerMainView(),
+    page: () => const SellerMainView(),
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),
