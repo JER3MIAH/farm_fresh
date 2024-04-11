@@ -9,7 +9,7 @@ class EnterEmail extends StatelessWidget {
     return AppColumn(
       children: [
         AppTextField(
-          labelText: 'Email address',
+          topLabelText: 'Email address',
           hintText: 'Enter email address',
           keyBoardType: TextInputType.emailAddress,
           validator: (value) {

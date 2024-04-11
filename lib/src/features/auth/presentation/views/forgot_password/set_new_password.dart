@@ -14,7 +14,7 @@ class SetNEwPassword extends HookWidget {
       children: [
         AppTextField(
           controller: passwordController,
-          labelText: 'Password',
+          topLabelText: 'Password',
           hintText: 'Enter password',
           keyBoardType: TextInputType.visiblePassword,
           isPasswordField: true,
@@ -25,7 +25,7 @@ class SetNEwPassword extends HookWidget {
         YBox(25.dy),
         AppTextField(
           controller: confirmPasswordController,
-          labelText: 'Confirm password',
+          topLabelText: 'Confirm password',
           hintText: 'Enter password',
           keyBoardType: TextInputType.visiblePassword,
           isPasswordField: true,

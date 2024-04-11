@@ -64,7 +64,7 @@ class LoginView extends HookWidget {
             ),
             AppTextField(
               controller: emailController,
-              hintText: 'Email address',
+              labelText: 'Email address',
               keyBoardType: TextInputType.emailAddress,
               validator: (value) {
                 return Validator.nonEmptyField(value);
@@ -73,7 +73,7 @@ class LoginView extends HookWidget {
             YBox(45.dy),
             AppTextField(
               controller: passwordController,
-              hintText: 'Password',
+              labelText: 'Password',
               isPasswordField: true,
               keyBoardType: TextInputType.visiblePassword,
               validator: (value) {

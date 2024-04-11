@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class AppTextField extends HookWidget {
-  final String? hintText, initialText, labelText, address;
+  final String? hintText, initialText, topLabelText, address, labelText;
   final String? Function(String?)? validator;
   final TextInputType? keyBoardType;
   final TextEditingController? controller;
@@ -21,6 +21,7 @@ class AppTextField extends HookWidget {
   const AppTextField({
     super.key,
     this.hintText,
+    this.topLabelText = '',
     this.labelText = '',
     this.controller,
     this.keyBoardType,
@@ -69,7 +70,7 @@ class AppTextField extends HookWidget {
       children: [
         hasTopTitle
             ? Text(
-                labelText!,
+                topLabelText!,
                 style: TextStyle(
                   fontSize: 17.sp,
                   fontWeight: FontWeight.normal,
@@ -139,7 +140,7 @@ class AppTextField extends HookWidget {
                           ),
                         )
                       : null,
-                  // labelText: labelText,
+                  labelText: labelText,
                   hintText: hintText,
                   hintStyle: address!.isEmpty
                       ? Theme.of(context).textTheme.displayMedium!.copyWith(

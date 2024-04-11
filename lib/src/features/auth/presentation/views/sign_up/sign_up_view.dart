@@ -73,7 +73,7 @@ class SignUpView extends HookConsumerWidget {
             YBox(20.dy),
             AppTextField(
               controller: fullNameController,
-              hintText: 'Full name',
+              labelText: 'Full name',
               keyBoardType: TextInputType.name,
               validator: (value) {
                 return Validator.nonEmptyField(value);
@@ -82,7 +82,7 @@ class SignUpView extends HookConsumerWidget {
             YBox(35.dy),
             AppTextField(
               controller: phoneNumberController,
-              hintText: 'Phone number',
+              labelText: 'Phone number',
               keyBoardType: TextInputType.phone,
               validator: (value) {
                 return Validator.nonEmptyField(value);
@@ -91,7 +91,7 @@ class SignUpView extends HookConsumerWidget {
             YBox(35.dy),
             AppTextField(
               controller: emailController,
-              hintText: 'Email address',
+              labelText: 'Email address',
               keyBoardType: TextInputType.emailAddress,
               validator: (value) {
                 return Validator.emailValidator(value);
@@ -100,7 +100,7 @@ class SignUpView extends HookConsumerWidget {
             YBox(35.dy),
             AppTextField(
               controller: passwordController,
-              hintText: 'Password',
+              labelText: 'Password',
               keyBoardType: TextInputType.visiblePassword,
               isPasswordField: true,
               validator: (value) {
