@@ -2,8 +2,11 @@ import 'package:farm_fresh/src/features/auth/presentation/views/login/login_view
 import 'package:farm_fresh/src/features/auth/presentation/views/forgot_password/forgot_password_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/otp_verification/otp_verification_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/register/register_view.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/add_delivery_address.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/confirm_address.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/set_up_profile.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/sign_up_view.dart';
-import 'package:farm_fresh/src/features/home/presentation/views/home_view.dart';
+import 'package:farm_fresh/src/features/home/presentation/views/buyer_home_view.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/features/onboarding/screen/onboarding_screen.dart';
 import 'package:farm_fresh/src/features/splash/splash_screen.dart';
@@ -57,7 +60,7 @@ List<GetPage> authPages = [
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),
-   GetPage(
+  GetPage(
     name: AuthRoutes.otpVerification,
     page: () => const OtpVerificationView(),
     transition: Transition.native,
@@ -69,13 +72,37 @@ List<GetPage> authPages = [
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),
+  GetPage(
+    name: AuthRoutes.addDeliveryAddress,
+    page: () => const AddDeliveryAddressView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
+  GetPage(
+    name: AuthRoutes.confirmAddress,
+    page: () => const ConfirmAddressView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
+  GetPage(
+    name: AuthRoutes.setUpPRofile,
+    page: () => const SetUpProfileView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
 ];
 
 //*-------------------------------Home Routes---------------------------------------------
 List<GetPage> homePages = [
   GetPage(
-    name: HomeRoutes.home,
-    page: () => const HomeView(),
+    name: HomeRoutes.buyerHome,
+    page: () => const BuyerMainView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
+  GetPage(
+    name: HomeRoutes.buyerHome,
+    page: () => const BuyerMainView(),
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),

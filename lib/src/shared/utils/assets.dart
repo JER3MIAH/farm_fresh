@@ -37,3 +37,5 @@ final String listFilled = 'list-filled'.svg;
 final String savedFilled = 'saved-filled'.svg;
 final String profileFilled = 'profile-filled'.svg;
 //? 
+final String searchIcon = 'search-icon'.svg;
+final String locationIcon = 'location-icon'.svg;

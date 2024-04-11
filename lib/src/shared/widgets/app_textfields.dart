@@ -49,7 +49,7 @@ class AppTextField extends HookWidget {
     final currentBorderColor = useState<Color>(
       controller != null && controller!.text.isNotEmpty
           ? appColors.green
-          : appColors.inputFieldBorderColor,
+          : appColors.inputFieldBorderColor.withOpacity(.5),
     );
     final errorText = useState<String>('');
     final focusNode = useFocusNode();

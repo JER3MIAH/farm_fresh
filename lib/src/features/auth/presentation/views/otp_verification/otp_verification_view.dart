@@ -1,6 +1,8 @@
 import 'package:farm_fresh/src/features/auth/data/models/user.dart';
 import 'package:farm_fresh/src/features/auth/presentation/view_models/sign_up_viewmodel.dart';
 import 'package:farm_fresh/src/features/auth/presentation/widgets/widgets.dart';
+import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
+import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -109,9 +111,9 @@ class OtpVerificationView extends HookConsumerWidget {
           title: 'Next',
           onTap: () {
             if (userType == UserType.buyer) {
-              
+              AppNavigator.pushNamed(AuthRoutes.addDeliveryAddress);
             } else {
-              
+              AppNavigator.pushNamed(AuthRoutes.setUpPRofile);
             }
           },
         ),

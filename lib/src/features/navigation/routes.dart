@@ -10,10 +10,14 @@ class AuthRoutes {
   static const address = '/addressView';
   static const forgotPassword = '/forgotPasswordView';
   static const otpVerification = '/otpVerificationView';
+  static const addDeliveryAddress = '/addDeliveryAddressView';
+  static const confirmAddress = '/confirmAddressView';
+  static const setUpPRofile = '/setUpPRofileView';
 }
 
 class HomeRoutes {
-  static const home = '/homeView';
+  static const buyerHome = '/buyerHomeView';
+  static const sellerHome = '/sellerHomeView';
 }
 
 class OrdersRoutes {}

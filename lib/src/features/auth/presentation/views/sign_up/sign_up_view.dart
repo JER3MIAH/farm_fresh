@@ -116,9 +116,10 @@ class SignUpView extends HookConsumerWidget {
                 AppNavigator.pushNamed(AuthRoutes.otpVerification);
                 // }
               },
-              buttonColor: signupViewmodel.buttonEnabled
-                  ? theme.primary
-                  : theme.secondary,
+              buttonColor: theme.primary,
+              //  signupViewmodel.buttonEnabled
+              //     ? theme.primary
+              //     : theme.secondary,
             ),
             YBox(27.dy),
             LinedUpText(

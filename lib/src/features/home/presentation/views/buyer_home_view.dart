@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class BuyerMainView extends StatelessWidget {
+  const BuyerMainView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBar(
-        title: const Text('Home View'),
+        title: const Text('Buyer Home View'),
       ),
     );
   }
