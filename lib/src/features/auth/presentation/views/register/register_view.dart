@@ -69,7 +69,7 @@ class RegisterView extends HookConsumerWidget {
                     if (signUpViewmodel.userType == UserType.buyer) {
                       AppNavigator.pushNamed(AuthRoutes.signUp);
                     } else if (signUpViewmodel.userType == UserType.seller) {
-                      //TODO:
+                      AppNavigator.pushNamed(AuthRoutes.signUp);
                     } else {
                       selectOptionBar();
                     }
@@ -86,7 +86,7 @@ class RegisterView extends HookConsumerWidget {
                     if (signUpViewmodel.userType == UserType.buyer) {
                       AppNavigator.pushNamed(AuthRoutes.login);
                     } else if (signUpViewmodel.userType == UserType.seller) {
-                      //TODO:
+                      AppNavigator.pushNamed(AuthRoutes.login);
                     } else {
                       AppSnackBar.showSnackbar(message: 'Select one');
                     }
@@ -107,12 +107,18 @@ class RegisterView extends HookConsumerWidget {
     required RegisterViewModel viewModel,
     required SingupViewModel signUpViewModel,
   }) {
+    final isSelected = viewModel.selectedOption == (isCustomer ? 1 : 2);
+
     return Container(
       width: double.infinity,
       height: 74,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: theme.secondary.withOpacity(0.06)),
+        borderRadius: BorderRadius.circular(10),
+        color: isSelected
+            ? theme.primary.withOpacity(0.06)
+            : theme.secondary.withOpacity(0.06),
+        border: isSelected ? Border.all(color: theme.primary) : null,
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Row(

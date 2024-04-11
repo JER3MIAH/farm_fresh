@@ -1,17 +1,20 @@
+import 'package:farm_fresh/src/features/auth/data/models/user.dart';
+import 'package:farm_fresh/src/features/auth/presentation/view_models/sign_up_viewmodel.dart';
 import 'package:farm_fresh/src/features/auth/presentation/widgets/widgets.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class OtpVerificationView extends HookWidget {
+class OtpVerificationView extends HookConsumerWidget {
   const OtpVerificationView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     final theme = Theme.of(context).colorScheme;
-    final otp2Controller = useTextEditingController();
+    // final otp2Controller = useTextEditingController();
+    final userType = ref.watch(signUpProvider).userType;
 
     return Scaffold(
       body: AppColumn(
@@ -67,7 +70,7 @@ class OtpVerificationView extends HookWidget {
             width: Dims.deviceSize.width * .64,
             child: PinCodeTextField(
               length: 4,
-              controller: otp2Controller,
+              // controller: otp2Controller,
               animationType: AnimationType.fade,
               onCompleted: (result) {
                 //* logic
@@ -98,6 +101,20 @@ class OtpVerificationView extends HookWidget {
             onTapTrailing: () {},
           ),
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: 15.dy).copyWith(bottom: 30.dy),
+        child: AppButton(
+          title: 'Next',
+          onTap: () {
+            if (userType == UserType.buyer) {
+              
+            } else {
+              
+            }
+          },
+        ),
       ),
     );
   }

@@ -119,7 +119,6 @@ class SignUpView extends HookConsumerWidget {
               buttonColor: signupViewmodel.buttonEnabled
                   ? theme.primary
                   : theme.secondary,
-              // : theme.secondary,
             ),
             YBox(27.dy),
             LinedUpText(
