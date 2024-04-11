@@ -88,7 +88,7 @@ class RegisterView extends HookConsumerWidget {
                     } else if (signUpViewmodel.userType == UserType.seller) {
                       AppNavigator.pushNamed(AuthRoutes.login);
                     } else {
-                      AppSnackBar.showSnackbar(message: 'Select one');
+                      selectOptionBar();
                     }
                   },
                 ),
