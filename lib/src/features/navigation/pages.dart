@@ -4,7 +4,7 @@ import 'package:farm_fresh/src/features/auth/presentation/views/otp_verification
 import 'package:farm_fresh/src/features/auth/presentation/views/register/register_view.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/add_delivery_address.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/confirm_address.dart';
-import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/set_up_profile.dart';
+import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/set_up_profile.dart';
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/sign_up_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/buyer_home_view.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
