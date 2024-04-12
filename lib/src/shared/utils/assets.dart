@@ -38,12 +38,17 @@ final String ordersFilled = 'orders-filled'.svg;
 final String listFilled = 'list-filled'.svg;
 final String savedFilled = 'saved-filled'.svg;
 final String profileFilled = 'profile-filled'.svg;
-//? 
+//?
 final String searchIcon = 'search-icon'.svg;
 final String locationIcon = 'location-icon'.svg;
 final String notificationIcon = 'notification-icon'.svg;
 final String cartIcon = 'cart-icon'.svg;
-final String flash= 'flash'.svg;
+final String flash = 'flash'.svg;
 final String check = 'check'.svg;
 final String newOrder = 'new-order'.svg;
 final String addImage = 'add-image'.svg;
+final String increase = 'increase'.svg;
+final String decrease = 'decrease'.svg;
+final String earning = 'earnings'.svg;
+final String totalOrders = 'total-orders'.svg;
+final String customer = 'customer'.svg;

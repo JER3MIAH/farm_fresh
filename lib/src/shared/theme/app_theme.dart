@@ -66,6 +66,8 @@ var appColors = AppColors();
 class AppColors {
   Color green = const Color(0xFF004F2D);
   Color orange = const Color(0xFFE97000);
+  Color darkyellow = const Color(0xFFEDA600);
+  Color blue = const Color(0xFF3B45F1);
   Color grey = const Color(0xff343434);
   Color barrierColor = const Color(0X8010031C);
   Color backGroundColor = const Color(0xffE5E5E5);
