@@ -1,8 +1,8 @@
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 
-class SellerHomeView extends StatelessWidget {
-  const SellerHomeView({super.key});
+class BuyerProfileView extends StatelessWidget {
+  const BuyerProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
