@@ -41,3 +41,5 @@ final String profileFilled = 'profile-filled'.svg;
 //? 
 final String searchIcon = 'search-icon'.svg;
 final String locationIcon = 'location-icon'.svg;
+final String notificationIcon = 'notification-icon'.svg;
+final String cartIcon = 'cart-icon'.svg;
