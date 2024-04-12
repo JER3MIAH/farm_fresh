@@ -1,4 +1,7 @@
+import 'package:farm_fresh/src/features/community/seller_community_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/seller_home_view.dart';
+import 'package:farm_fresh/src/features/profile/seller_profile_view.dart';
+import 'package:farm_fresh/src/features/statistics/seller_statistics_view.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,6 +16,9 @@ class SellerMainView extends HookWidget {
 
     List<Widget> pages = const [
       SellerHomeView(),
+      SellerCommunityView(),
+      SellerStatisticsView(),
+      SellerProfileView(),
     ];
 
     return Scaffold(
