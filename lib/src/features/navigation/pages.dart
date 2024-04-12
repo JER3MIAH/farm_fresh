@@ -8,6 +8,7 @@ import 'package:farm_fresh/src/features/auth/presentation/views/set_up_profile/s
 import 'package:farm_fresh/src/features/auth/presentation/views/sign_up/sign_up_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/main_views/buyer_main_view.dart';
 import 'package:farm_fresh/src/features/home/presentation/views/main_views/seller_main_view.dart';
+import 'package:farm_fresh/src/features/home/presentation/views/notifications_view.dart';
 import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/features/onboarding/screen/onboarding_screen.dart';
 import 'package:farm_fresh/src/features/splash/splash_screen.dart';
@@ -104,6 +105,12 @@ List<GetPage> homePages = [
   GetPage(
     name: HomeRoutes.sellerHome,
     page: () => const SellerMainView(),
+    transition: Transition.native,
+    transitionDuration: const Duration(milliseconds: 500),
+  ),
+  GetPage(
+    name: HomeRoutes.notifications,
+    page: () => const NotificationsView(),
     transition: Transition.native,
     transitionDuration: const Duration(milliseconds: 500),
   ),

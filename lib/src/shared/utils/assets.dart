@@ -43,3 +43,6 @@ final String searchIcon = 'search-icon'.svg;
 final String locationIcon = 'location-icon'.svg;
 final String notificationIcon = 'notification-icon'.svg;
 final String cartIcon = 'cart-icon'.svg;
+final String flash= 'flash'.svg;
+final String check = 'check'.svg;
+final String newOrder = 'new-order'.svg;

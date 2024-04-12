@@ -1,15 +1,20 @@
+import 'package:farm_fresh/src/features/home/presentation/view_models/seller_home_viewmodel.dart';
 import 'package:farm_fresh/src/features/home/presentation/widgets/seller_product_container.dart';
+import 'package:farm_fresh/src/features/navigation/app_navigator.dart';
+import 'package:farm_fresh/src/features/navigation/routes.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SellerHomeView extends HookWidget {
+class SellerHomeView extends HookConsumerWidget {
   const SellerHomeView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     final searchControler = useTextEditingController();
+    final products = ref.watch(sellerHomeProvider).products;
 
     return Scaffold(
       body: Padding(
@@ -44,7 +49,9 @@ class SellerHomeView extends HookWidget {
                         ),
                       ),
                       AppInkWell(
-                        onTap: () {},
+                        onTap: () {
+                          AppNavigator.pushNamed(HomeRoutes.notifications);
+                        },
                         isCircle: true,
                         child: SvgPicture.asset(notificationIcon),
                       ),
@@ -75,8 +82,10 @@ class SellerHomeView extends HookWidget {
                 childAspectRatio: 142.dx / 190.dy,
                 crossAxisCount: 2,
                 children: List.generate(
-                  9,
-                  (index) => SellerProductContainer(),
+                  products.length,
+                  (index) => SellerProductContainer(
+                    productName: products[index],
+                  ),
                 ),
               ),
             ),

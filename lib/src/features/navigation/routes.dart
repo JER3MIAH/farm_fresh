@@ -18,6 +18,7 @@ class AuthRoutes {
 class HomeRoutes {
   static const buyerHome = '/buyerHomeView';
   static const sellerHome = '/sellerHomeView';
+  static const notifications = '/notificationsView';
 }
 
 class OrdersRoutes {}

@@ -2,8 +2,10 @@ import 'package:farm_fresh/src/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class SellerProductContainer extends StatelessWidget {
+  final String productName;
   const SellerProductContainer({
     super.key,
+    required this.productName,
   });
 
   @override
@@ -27,7 +29,7 @@ class SellerProductContainer extends StatelessWidget {
             height: 152.dy,
           ),
           Text(
-            'Spinach',
+            productName,
             style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
