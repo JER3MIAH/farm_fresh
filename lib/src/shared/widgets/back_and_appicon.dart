@@ -1,6 +1,5 @@
 import 'package:farm_fresh/src/features/onboarding/screen/widgets/app_icon_and_text.dart';
 import 'package:farm_fresh/src/shared/shared.dart';
-import 'package:farm_fresh/src/shared/widgets/app_back_button.dart';
 import 'package:flutter/material.dart';
 
 class BackAndAppIcon extends StatelessWidget {
