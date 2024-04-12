@@ -46,3 +46,4 @@ final String cartIcon = 'cart-icon'.svg;
 final String flash= 'flash'.svg;
 final String check = 'check'.svg;
 final String newOrder = 'new-order'.svg;
+final String addImage = 'add-image'.svg;

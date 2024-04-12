@@ -45,6 +45,7 @@ dependencies:
 
   # hooks and riverpod in one package(pretty cool right?)
   hooks_riverpod: ^2.5.1
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:

@@ -95,7 +95,9 @@ class SellerHomeView extends HookConsumerWidget {
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         backgroundColor: appColors.green,
-        onPressed: () {},
+        onPressed: () {
+          AppNavigator.pushNamed(HomeRoutes.addProduct);
+        },
         child: Icon(
           Icons.add,
           color: appColors.white,

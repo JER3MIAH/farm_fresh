@@ -19,6 +19,7 @@ class HomeRoutes {
   static const buyerHome = '/buyerHomeView';
   static const sellerHome = '/sellerHomeView';
   static const notifications = '/notificationsView';
+  static const addProduct = '/addProductView';
 }
 
 class OrdersRoutes {}
